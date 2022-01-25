@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public int speed = 30;
+    [SerializeField] private int speed = 30;
     private float horizontal;
     private float vertical;
 
