@@ -5,12 +5,17 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public Rigidbody rb;
-    [SerializeField] private float speed = 30f;
+    public float speed = 30f;
     [SerializeField] private float lifetime = 2;
+    private Vector3 shootDir;
     
     void Start()
     {
-        rb.velocity = Vector3.forward * speed;
+        rb.velocity = shootDir.normalized * speed;
+    }
+
+    public void Setup(Vector3 dir) {
+        shootDir = dir;
     }
 
     private void FixedUpdate() {
