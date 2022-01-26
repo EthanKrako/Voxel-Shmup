@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
     [SerializeField] private int speed = 30;
+    [SerializeField] private float immunity = 1;
+    public int health = 3;
     private float horizontal;
     private float vertical;
 
@@ -14,6 +16,16 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        if (health < 1) {
+            rb.velocity = new Vector3(0, 0, 0);
+            this.enabled = false;
+        }
+        immunity -= Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (immunity < 0)
+        health -= 1;
     }
 
     private void FixedUpdate() {
