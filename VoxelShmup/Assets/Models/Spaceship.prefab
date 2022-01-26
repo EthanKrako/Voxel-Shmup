@@ -160,6 +160,7 @@ MonoBehaviour:
   rb: {fileID: 7660646375485150358}
   speed: 30
   immunity: 1
+  explosion: {fileID: 4689737644049178407, guid: 9d15440145232e64e8e1e8d5d3956746, type: 3}
   health: 3
 --- !u!1 &7660646374319198594
 GameObject:

@@ -90,6 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6380852154746833836}
+  - component: {fileID: 4468196911348156611}
+  - component: {fileID: 3598301204680591953}
   m_Layer: 0
   m_Name: Ennemy
   m_TagString: Ennemy
@@ -113,6 +115,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4468196911348156611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036661431624585494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0081472, y: 1, z: 3.0896292}
+  m_Center: {x: 0.003827095, y: 0, z: 0.049752712}
+--- !u!114 &3598301204680591953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036661431624585494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5a8d1e49f976245bdf3daf0d28128b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  explosion: {fileID: 4689737644049178407, guid: 9d15440145232e64e8e1e8d5d3956746, type: 3}
 --- !u!1 &6847703747392622431
 GameObject:
   m_ObjectHideFlags: 0

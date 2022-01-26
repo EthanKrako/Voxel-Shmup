@@ -18,7 +18,7 @@ public class EnnemyWeaponScript : MonoBehaviour
 
     void Update()
     {
-        if (player.GetComponent<PlayerMovement>().health > 0) {
+        if (GameObject.Find("Spaceship") != null) {
             Vector3 relativePos = player.transform.position - weapon.position;
             weapon.rotation = Quaternion.LookRotation(relativePos);
             if (timer < 0) {

@@ -7,8 +7,8 @@ public class BulletScript : MonoBehaviour
     public Rigidbody rb;
     public float speed = 30f;
     [SerializeField] private float lifetime = 2;
-    private Vector3 shootDir;
     [SerializeField] private ParticleSystem explosion;
+    private Vector3 shootDir;
     
     void Start()
     {

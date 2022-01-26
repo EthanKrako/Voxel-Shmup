@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: -8241453099953075026}
   speed: 30
-  lifetime: 2
+  lifetime: 3
   explosion: {fileID: 5792827372925549727, guid: 5a7d8884883a2c6479f4a91dc33fc427, type: 3}
 --- !u!54 &-8241453099953075026
 Rigidbody:

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private int speed = 30;
     [SerializeField] private float immunity = 1;
+    [SerializeField] private ParticleSystem explosion;
     public int health = 3;
     private float horizontal;
     private float vertical;
@@ -17,8 +18,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         if (health < 1) {
-            rb.velocity = new Vector3(0, 0, 0);
-            this.enabled = false;
+            Explode();
         }
         immunity -= Time.deltaTime;
     }
@@ -32,5 +32,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate() {
         rb.velocity = new Vector3(horizontal, 0, vertical).normalized * speed;
         rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(0,180,horizontal * 20), Time.deltaTime * 5);
+    }
+
+    private void Explode() {
+        Instantiate(explosion, rb.position, new Quaternion(0,0,0,0));
+        Destroy(this.gameObject);
     }
 }

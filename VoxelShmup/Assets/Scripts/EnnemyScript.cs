@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EnnemyScript : MonoBehaviour
 {
-    public GameObject bullet;
-    public GameObject player;
-    private Transform weapon;
-    [SerializeField] private float cooldown = 1f;
+    [SerializeField] private int health = 1;
+    [SerializeField] private ParticleSystem explosion;
     private float timer = 0f;
 
-    private void Start() {
-        weapon = this.transform;
+    private void Update() {
+        if (health < 1) {
+            Explode();
+        }
     }
 
-    void Update()
-    {
-        if (timer < 0) {
-            timer = cooldown;
-            Instantiate(bullet, weapon.position, weapon.rotation);
-        }
-        timer -= Time.deltaTime;
+    private void OnTriggerEnter(Collider other) {
+        health -= 1;
+    }
+
+    private void Explode() {
+        Instantiate(explosion, this.gameObject.transform.position, new Quaternion(0,0,0,0));
+        Destroy(this.gameObject);
     }
 }
