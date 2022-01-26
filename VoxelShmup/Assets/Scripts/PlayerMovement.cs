@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (immunity < 0)
         health -= 1;
+        immunity = 1;
     }
 
     private void FixedUpdate() {

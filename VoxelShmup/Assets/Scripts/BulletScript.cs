@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     public float speed = 30f;
     [SerializeField] private float lifetime = 2;
     private Vector3 shootDir;
+    [SerializeField] private ParticleSystem explosion;
     
     void Start()
     {
@@ -21,7 +22,18 @@ public class BulletScript : MonoBehaviour
     private void FixedUpdate() {
         lifetime -= Time.deltaTime;
         if (lifetime < 0) {
-            Destroy(this.gameObject);
+            Explode();
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Ennemy") {
+            Explode();
+        }
+    }
+
+    private void Explode() {
+        Instantiate(explosion, rb.position, rb.rotation);
+        Destroy(this.gameObject);
     }
 }
