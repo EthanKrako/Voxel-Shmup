@@ -14,6 +14,7 @@ public class EnnemyWeaponScript : MonoBehaviour
     private void Start() {
         weapon = this.transform;
         player = GameObject.FindGameObjectWithTag("Player");
+        timer = 5;
     }
 
     void Update()

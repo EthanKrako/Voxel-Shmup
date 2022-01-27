@@ -6,7 +6,6 @@ public class EnnemyScript : MonoBehaviour
 {
     [SerializeField] private int health = 1;
     [SerializeField] private ParticleSystem explosion;
-    private float timer = 0f;
 
     private void Update() {
         if (health < 1) {
